@@ -7,6 +7,12 @@ html {
 }
 :root {
   color: $font-color;
+  background: #F7F1EB;
+}
+#my-scrollbar {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
 }
 
 body {
@@ -178,7 +184,7 @@ select {
   cursor: pointer;
 }
 
-.container {
+#home {
   margin-top: 5rem;
   width: 100vw;
   display: flex;
@@ -238,6 +244,7 @@ select {
   display: flex;
   justify-content: center;
   overflow: hidden;
+  transform: scale(1.1);
   .card-bg {
     opacity: 0;
     width: 33.33%;
@@ -248,10 +255,10 @@ select {
     will-change: tranform;
     transition: 0.5s ease-out;
     // transition-duration: 1s;
-    height: 1500vh;
+    height: 1000vh;
   }
   .card-bg:nth-child(odd) {
-    transform: translateX(0) translateY(0px) translateZ(0);
+    transform: translateX(0) translateY(-2700px) translateZ(0);
   }
   .card-bg:nth-child(even) {
     transform: translateX(0) translateY(-500px) translateZ(0);
@@ -259,7 +266,7 @@ select {
 }
 .btn-wrapper {
   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
   position: absolute;
   z-index: 4;
   margin-left: auto;

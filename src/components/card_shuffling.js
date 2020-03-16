@@ -1,98 +1,109 @@
-import React, { Component, createRef, useEffect } from "react";
-import FadeIn from "react-fade-in";
-import { Link } from "react-router-dom";
-import gsap from "gsap";
-import SmoothScrollbar from 'smooth-scrollbar';
-import OverscrollPlugin from 'smooth-scrollbar/plugins/overflow';
-import Scrollbar from 'react-smooth-scrollbar';
+import React, { useRef, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
-SmoothScrollbar.use(OverscrollPlugin);
+import { TweenMax, Power3 } from "gsap";
 
-export default class CardShuffer extends Component {
-  constructor() {
-    super();
-    this.cardScroll = this.cardScroll.bind(this);
-  }
-  //   card1 = createRef(null);
-  //   card2 = createRef(null);
-  //   card3 = createRef(null);
-  cardScroll() {
-    let card_row = [...document.querySelectorAll(".card-bg")];
+export default function CardShuffer() {
+  let wrapper = useRef(null);
+  let card1 = useRef(null);
+  let card2 = useRef(null);
+  let card3 = useRef(null);
+  let card4 = useRef(null);
 
-    // console.log(card_row);
-    let even = false;
-    let count = 1;
-    card_row.forEach(e => {
-      if (count == 1) {
-        // e.style.transform = `translateY(${window.scrollY-1000}px)`
-        gsap.to(e, {
-          duration: 0.5,
-          ease: "expo.out",
-          //   y: window.scrollY - gsap.utils.random(1500, 2000)
-          y:
-            (-window.scrollY * gsap.utils.random(2, 3)) / 3 -
-            gsap.utils.random(1000, 1300)
-        });
-      } else if (count == 2) {
-        // e.style.transform = `translateY(${-window.scrollY+300-700}px)`
-        gsap.to(e, {
-          duration: 0.5,
-          ease: "expo.out",
-          y:
-            (window.scrollY * gsap.utils.random(2, 3)) / 3 -
-            gsap.utils.random(1000, 1300)
-        });
-      } else if (count == 3) {
-        gsap.to(e, {
-          duration: 0.5,
-          ease: "expo.out",
-          y:
-            (-window.scrollY * gsap.utils.random(3, 4)) / 3 -
-            gsap.utils.random(1000, 1300)
-        });
-      } else if (count == 4) {
-        gsap.to(e, {
-          duration: 0.5,
-          ease: "expo.out",
-          y:
-            (window.scrollY * gsap.utils.random(3, 4)) / 3 -
-            gsap.utils.random(1000, 1300)
-        });
-      }
-      count++;
-      //   console.log(randnum);
-      even = !even;
-    });
-  }
+  let history = useHistory();
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.cardScroll);
-    window.scrollTo(0, 0);
-    let card_row = [...document.querySelectorAll(".card-bg")];
-    card_row.forEach(e => {
-      gsap.to(e, {
-        duration: 0.3,
-        opacity: 1
+  const nextPage = () => {
+    TweenMax.to(wrapper, 1, {
+      scale: 1,
+      ease: Power3.easeInOut
+    }).then(() => {
+      TweenMax.to(card1, 1, {
+        opacity: 0,
+        y: 0,
+        ease: Power3.easeIn
+      });
+      TweenMax.to(card2, 1, {
+        opacity: 0,
+        y: -2400,
+        ease: Power3.easeIn
+      });
+      TweenMax.to(card3, 1, {
+        opacity: 0,
+        y: 0,
+        ease: Power3.easeIn
+      });
+      TweenMax.to(
+        card4,
+        1,
+        {
+          opacity: 0,
+          y: -2400,
+          ease: Power3.easeIn
+        },
+        0.5
+      ).then(() => {
+        setTimeout(() => {
+          history.push("/name");
+        }, 500);
       });
     });
-  }
-  render() {
-    return (
-      <FadeIn>
-        <div className="btn-wrapper">
-          <div className="btn" id="card-btn">
-            Click
-          </div>
-        </div>
-        <Scrollbar>
-          <div className="flex-wrapper">
-            <div className="card-bg"></div>
-            <div className="card-bg"></div>
-            <div className="card-bg"></div>
-            <div className="card-bg"></div>
-          </div>
-          </Scrollbar>
-      </FadeIn>
-    );
-  }
+  };
+
+  useEffect(() => {
+    TweenMax.to(card1, 0.8, {
+      opacity: 1,
+      ease: Power3.easeOut,
+      y: -2400
+    });
+    TweenMax.to(card2, 0.8, {
+      opacity: 1,
+      ease: Power3.easeOut,
+      y: -900
+    });
+    TweenMax.to(card3, 0.8, {
+      opacity: 1,
+      ease: Power3.easeOut,
+      y: -2300
+    });
+    TweenMax.to(card4, 0.8, {
+      opacity: 1,
+      ease: Power3.easeOut,
+      y: -800
+    });
+  }, []);
+
+  return (
+    <div
+      className="flex-wrapper"
+      onClick={nextPage}
+      ref={el => {
+        wrapper = el;
+      }}
+    >
+      <div
+        className="card-bg"
+        ref={el => {
+          card1 = el;
+        }}
+      ></div>
+      <div
+        className="card-bg"
+        ref={el => {
+          card2 = el;
+        }}
+      ></div>
+      <div
+        className="card-bg"
+        ref={el => {
+          card3 = el;
+        }}
+      ></div>
+      <div
+        className="card-bg"
+        ref={el => {
+          card4 = el;
+        }}
+      ></div>
+    </div>
+  );
 }

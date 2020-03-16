@@ -19,8 +19,7 @@ export default class Gender extends Component {
     const { match: { params } } = this.props;
     const { name } = params;
     return (
-      <div className="container form">
-          
+      <div className="form">
         <h1>HI! {name}</h1>
         <h1>Please choose your gender</h1>
          <div className="btn-wrapper">

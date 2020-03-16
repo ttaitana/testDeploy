@@ -16,7 +16,7 @@ export default class GetName extends Component {
   }
   render() {
     return (
-      <FadeIn delay="300" transitionDuration="500" className="container form">
+      <FadeIn delay="300" transitionDuration="500" className="form">
         <h1>What is your name ?</h1>
         <input type="text" name="name" onChange={this.setName} required />
         <Link to={`/gender/${this.state.name}`}>Click me</Link>
