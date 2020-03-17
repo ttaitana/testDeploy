@@ -217,6 +217,15 @@ select {
   height: 100vh;
   background: white;
 }
+.box-transition {
+  position: absolute;
+  z-index: 4;
+  width: 100vw;
+  height: 100vh;
+  background: $font-color;
+  // transition: 0.3s;
+  opacity: 0;
+}
 
 #myVideo {
   -webkit-transform: translateX(-50%) translateY(-50%);
