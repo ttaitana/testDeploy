@@ -17,7 +17,7 @@ export default class Landing extends Component {
           </h1>
           <h1>จะ “เปลี่ยน” ชีวิตคุณ</h1>
         </FadeIn>
-        <Link to="/home">
+        <Link to="/intro">
           <FadeIn delay="100" className="logo-wrapper">
             <img src={logo} alt="" className="logo" />
             <img src={logo_ring} alt="" className="ring" />

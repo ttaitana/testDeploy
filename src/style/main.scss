@@ -7,7 +7,7 @@ html {
 }
 :root {
   color: $font-color;
-  background: #F7F1EB;
+  background: #f7f1eb;
 }
 #my-scrollbar {
   width: 100vw;
@@ -210,6 +210,27 @@ select {
       transform-origin: center;
     }
   }
+}
+
+.video-container {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+}
+
+#myVideo {
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
 }
 
 // btn zone
