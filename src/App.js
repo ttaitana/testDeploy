@@ -10,6 +10,7 @@ import Gender from './components/gender'
 import BirthDate from './components/date_birth'
 import CardShuffer from './components/card_shuffling'
 import Intro from './components/intro'
+import HandScan from './components/handscan'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/birthdate" component={BirthDate}/>
         <Route path="/card" component={CardShuffer}/>
         <Route path="/intro" component={Intro}/>
+        <Route path="/handscan" component={HandScan}/>
       </Switch>
     </div>
   );

@@ -226,6 +226,15 @@ select {
   // transition: 0.3s;
   opacity: 0;
 }
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  text-align: center;
+}
 
 #myVideo {
   -webkit-transform: translateX(-50%) translateY(-50%);

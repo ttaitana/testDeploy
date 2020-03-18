@@ -10,7 +10,7 @@ export default class BirthDate extends Component {
         <h1>What  your  date  of  birth ?</h1>
         <p>(00/00/199x)</p>
         <input type="text" name="name" required/>
-        <Link to="/home">Click me</Link>
+        <Link to="/handscan">Click me</Link>
       </div>
     );
   }
