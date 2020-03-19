@@ -17,17 +17,18 @@ export default class Contract extends Component {
         </div>
         <h1>CONTACT US</h1>
         <p>เพียงกรอกรายละเอียดด้านล่างเราจะติดต่อกลับเร็วที่สุด</p>
+        <br/>
         <form action="" className="form">
-          <label htmlFor="Name">YOUR NAME *</label>
+          <p htmlFor="Name">YOUR NAME *</p>
           <input type="text" name="Name" required />
 
-          <label htmlFor="email">YOUR E-MAIL ADDRESS *</label>
+          <p htmlFor="email">YOUR E-MAIL ADDRESS *</p>
           <input type="email" name="email" required />
 
-          <label htmlFor="subject">SUBJECT</label>
+          <p htmlFor="subject">SUBJECT</p>
           <input type="text" name="subject" />
 
-          <label htmlFor="message">YOUR MESSAGE</label>
+          <p htmlFor="message">YOUR MESSAGE</p>
           <textarea name="message" cols="30" rows="10"></textarea>
           <input type="submit" value="send message" className="send-contract" />
         </form>

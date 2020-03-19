@@ -10,13 +10,13 @@ import "../../style/navbar.scss";
 export default class Navbar extends Component {
   render() {
     return (
-      <div class="nav">
-        <div class="nav-header">
-          <div class="nav-title">
+      <div className="nav">
+        <div className="nav-header">
+          <div className="nav-title">
             <Logo width={65} />
           </div>
         </div>
-        <div class="nav-btn">
+        <div className="nav-btn">
           <label for="nav-check">
             <span></span>
             <span></span>
@@ -24,8 +24,8 @@ export default class Navbar extends Component {
           </label>
         </div>
 
-        <div class="nav-links">
-          <Link to="/">
+        <div className="nav-links">
+          <Link to="/home">
             <Shop width={65} id="shop-logo" />
           </Link>
             <Popup

@@ -10,7 +10,7 @@ export default function Intro() {
   useEffect(() => {
     TweenMax.to(box, 0, {
       transform: "skewY(-10deg)",
-      y: (-box.offsetHeight * 3) / 2,
+      y: (-box.offsetHeight * 3) / 1.5,
       ease: Expo.easeOut
     }).then(() => {
       TweenMax.to(box, 0, {
@@ -20,16 +20,18 @@ export default function Intro() {
   });
 
   const myHandler = () => {
-    TweenMax.to(box, 1, {
-      transform: "skewX(0deg)",
-      y: 0,
-      height: '140vh',
-      ease: Expo.easeOut
-    }).then(() => {
-      setTimeout(() => {
-        history.push("/home");
-      }, 0);
-    });
+    setTimeout(() => {
+      TweenMax.to(box, 1, {
+        transform: "skewX(0deg)",
+        y: -100,
+        height: '120vh',
+        ease: Expo.easeOut
+      }).then(() => {
+        setTimeout(() => {
+          history.push("/home");
+        }, 0);
+      });
+    }, 500)
   };
   return (
     <div className="video-container">

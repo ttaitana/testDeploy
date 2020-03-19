@@ -139,6 +139,17 @@ body {
 // form
 .form {
   padding: 0 10%;
+  p{
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+}
+.form-control{
+  width: 40rem;
+  input[type="text"]{
+    font-size: 2rem;
+  }
 }
 label {
   float: left;
@@ -162,12 +173,13 @@ select {
   height: auto;
   margin: 0;
   outline: 0;
-  padding: 15px;
+  padding: 1rem 0;
   width: 100%;
   background-color: transparent;
   color: $font-color;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
   margin-bottom: 30px;
+  text-align: center;
 }
 .send-contract {
   padding: 19px 39px 18px 39px;
@@ -185,13 +197,14 @@ select {
 }
 
 #home {
-  margin-top: 5rem;
+  // margin-top: 5rem;
   width: 100vw;
   display: flex;
   justify-content: center;
   text-align: center;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
   .highlight {
     font-size: 4rem;
   }
@@ -228,12 +241,24 @@ select {
 }
 .overlay {
   position: absolute;
-  top: 0;
+  top: 15%;
   right: 0;
   bottom: 0;
   left: 0;
   color: #fff;
   text-align: center;
+  img{
+    transform: scaleX(-1);
+    opacity: .4;
+  }
+}
+.croper{
+  width: 500px;
+  height: 736px;
+  overflow: hidden;
+  video{
+    transform: translateX(-25%) scaleX(-1) !important ;
+  }
 }
 
 #myVideo {
@@ -271,7 +296,7 @@ select {
   border: 1px transparent solid;
   border-radius: 1rem;
 }
-.btn-wrapper {
+.btn-wrapper-row {
   margin: 4rem 0;
   display: flex;
   justify-content: center;
@@ -319,4 +344,11 @@ select {
     background: white;
     border-radius: 1rem;
   }
+}
+.container{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }

@@ -10,13 +10,20 @@ export default function Home() {
   let box = useRef(null);
   useEffect(() => {
     TweenMax.to(box, 0, {
+      height: '100vh',
       opacity: 1
     }).then(() => {
       TweenMax.to(box, .6, {
         y: box.offsetHeight,
         delay: .1
+      }).then(() => {
+        TweenMax.to(
+          box, 0, {
+            display: 'none'
+          }
+        )
       });
-    });
+    })
   });
 
   return (
@@ -30,7 +37,7 @@ export default function Home() {
       <FadeIn delay="300" transitionDuration="500">
         <div className="">
           <Navbar />
-          <div className="container" id="home">
+          <div className="" id="home">
             <FadeIn delay="300" transitionDuration="500">
               <h1>
                 <span className="highlight">DO MORE</span>
