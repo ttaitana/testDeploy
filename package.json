@@ -13,7 +13,7 @@
     "react-fade-in": "^0.1.8",
     "react-gsap": "^1.2.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
+    "react-scripts": "5.0.1",
     "react-scrollmagic": "^2.2.0",
     "react-smooth-scrollbar": "^8.0.6",
     "react-webcam": "^5.0.0",
